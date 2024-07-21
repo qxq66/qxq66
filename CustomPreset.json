@@ -62,3 +62,4 @@
     "default_max_lora_number": 5,
 	"default_save_metadata_to_images": true,
 	"default_metadata_scheme": "a1111"
+}
