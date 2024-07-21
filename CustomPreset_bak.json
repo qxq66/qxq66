@@ -53,4 +53,5 @@
     "default_overwrite_step": 25,
     "default_advanced_checkbox": true,
     "default_image_number": 4,
-    "default_max_lora_number": 5,
+    "default_max_lora_number": 5
+}
