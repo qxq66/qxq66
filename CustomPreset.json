@@ -56,7 +56,7 @@
     "default_clip_skip": 1,
     "default_vae": "Default (model)",
     "default_output_format": "jpeg",
-    "default_overwrite_step": 25,
+    "default_overwrite_step": 21,
     "default_advanced_checkbox": true,
     "default_image_number": 4,
     "default_max_lora_number": 5,
