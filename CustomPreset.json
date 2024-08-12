@@ -39,7 +39,7 @@
     "default_sampler": "dpmpp_2m_sde_gpu",
     "default_scheduler": "karras",
     "default_performance": "Speed",
-    "default_prompt": "portrait of XG99, photo realistic, digitally enhanced, steady gaze, expressive, highly detailed, sharp focus, high resolution",
+    "default_prompt": "portrait of XG99, (in a restaurant:1.2), photo realistic, digitally enhanced, steady gaze, expressive, highly detailed, sharp focus, high resolution",
     "default_prompt_negative": "(long oval face:1.2), (man:1.3), (male:1.3), distorted face, distorted head, distorted eyes, big chin",
     "default_styles": [
         "Fooocus V2",
