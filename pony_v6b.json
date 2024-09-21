@@ -35,8 +35,8 @@
     "default_sampler": "dpmpp_2m_sde_gpu",
     "default_scheduler": "karras",
     "default_performance": "Speed",
-    "default_prompt": "score_9, score_8_up, score_7_up, score_6_up, 1girl, solo,(looking at viewer:1.3),perfect eyes, big eyes, glossy lips, sexy, medium boobs, saggy breasts, boob focus, nipples, glossy, realistic, dynamic, topless , tan skin, wet skin, navel, small hips, slender, small round butt, earrings, (booty shorts wide open revealing pussy:1.2), black thong, swollen pussy, under boob, intense pleasure, cowboy shot, nipples visible, panting, cleavage, breast grab, rain",
-    "default_prompt_negative": "score_5, score_4, 3d, worst quality, bad face, deformed face, low quality, (text:1.2), censored, deformed, bad hand, blurry, (watermark:1.2), bunny ears, extra hands, extra fingers , deformed fingers",
+    "default_prompt": "score_9, score_8_up, score_7_up, score_6_up,DiamondF99,petite, front view, upperbody closeup, street, wearing refined clothes, looking at the viewer",
+    "default_prompt_negative": "score_5, score_4, (3d:0.5),(realistic:0.5),worst quality, bad face, deformed face, low quality, (text:1.2), censored, deformed, bad hand, blurry, (watermark:1.2), bunny ears, extra hands, extra fingers , deformed fingers",
     "default_styles": [
         "Fooocus Pony"
     ],
@@ -46,6 +46,7 @@
     "default_overwrite_step": 18,
 	"default_advanced_checkbox": true,
 	"default_image_number": 4,
+	"default_max_image_number": 100,
     "default_inpaint_engine_version": "None",
 	"default_save_metadata_to_images": true,
 	"default_metadata_scheme": "a1111",
