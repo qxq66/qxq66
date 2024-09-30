@@ -35,8 +35,8 @@
     "default_sampler": "dpmpp_2m_sde_gpu",
     "default_scheduler": "karras",
     "default_performance": "Speed",
-    "default_prompt": "score_9, score_8_up, score_7_up, score_6_up,DiamondF99,petite, front view, upperbody closeup, street, wearing refined clothes, looking at the viewer",
-    "default_prompt_negative": "score_5, score_4, (3d:0.5),(realistic:0.5),worst quality, bad face, deformed face, low quality, (text:1.2), censored, deformed, bad hand, blurry, (watermark:1.2), bunny ears, extra hands, extra fingers , deformed fingers",
+    "default_prompt": "score_9, score_8_up, score_7_up, score_6_up, PamelaA99, petite, front view, upperbody closeup, street, wearing refined clothes, looking at the viewer",
+    "default_prompt_negative": "score_5, (3d:0.5),(realistic:0.5),worst quality, bad face, deformed face, low quality, (text:1.2), censored, deformed, bad hand, blurry, (watermark:1.2), bunny ears, extra hands, extra fingers , deformed fingers",
     "default_styles": [
         "Fooocus Pony"
     ],
