@@ -39,7 +39,7 @@
     "default_sampler": "dpmpp_2m_sde_gpu",
     "default_scheduler": "karras",
     "default_performance": "Speed",
-    "default_prompt": "portrait of XG99 as a (young woman with small lips and closed mouth:1.3), (long curled hair:1.2), (in a restaurant:1.2), photo realistic, digitally enhanced, highly detailed, high resolution, 4k",
+    "default_prompt": "close up portrait of PamelaA99, woman, (curly blonde hair:1.2), detailed skin, in a snowstorm, moody lighting, intricate details, depth of field, outdoors, Fujifilm XT3, RAW, 8K UHD, film grain, Unreal Engine 5, ray tracing",
     "default_prompt_negative": "freckles, dark skin, dark, (old woman:1.3), (fat and large face:1.3), (big chin:1.2), man, male, distorted face, distorted head, distorted eyes",
     "default_styles": [
         "Fooocus V2",
