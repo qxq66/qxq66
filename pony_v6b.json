@@ -1,5 +1,5 @@
 {
-    "default_model": "ponyDiffusionV6XL.safetensors",
+    "default_model": "ponyFaetality_v11.safetensors",
     "default_refiner": "None",
     "default_refiner_switch": 0.5,
     "default_vae": "ponyDiffusionV6XL_vae.safetensors",
@@ -51,7 +51,7 @@
 	"default_save_metadata_to_images": true,
 	"default_metadata_scheme": "a1111",
     "checkpoint_downloads": {
-        "ponyDiffusionV6XL.safetensors": "https://huggingface.co/mashb1t/fav_models/resolve/main/fav/ponyDiffusionV6XL.safetensors"
+        
     },
     "embeddings_downloads": {},
     "lora_downloads": {},
