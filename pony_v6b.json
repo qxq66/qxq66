@@ -36,7 +36,7 @@
     "default_scheduler": "karras",
     "default_performance": "Speed",
     "default_prompt": "score_9, score_8_up, score_7_up, score_6_up, KatjaFlnt99, (curly blonde hair:1.1), lingerie, looking at viewer, front view, bedroom, bed, brown eyes",
-    "default_prompt_negative": "(3d:1.2), (realistic:1.2), worst quality, bad face, deformed face, low quality, (text:1.2), censored, deformed, blurry, (watermark:1.2), (simple background:1.2)",
+    "default_prompt_negative": "(head out of frame:1.2), (3d:1.2), (realistic:1.2), worst quality, bad face, deformed face, low quality, (text:1.2), censored, deformed, blurry, (watermark:1.2), (simple background:1.2)",
     "default_styles": [
         "Fooocus Pony"
     ],
