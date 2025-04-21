@@ -38,18 +38,23 @@
     "default_prompt": "score_9, score_8_up, score_7_up, score_6_up, KatjaFlnt99, (curly blonde hair:1.1), lingerie, looking at viewer, front view, bedroom, bed, brown eyes",
     "default_prompt_negative": "(head out of frame:1.2), freckles, bad quality, bad face, deformed face, low quality, text, censored, deformed, blurry, simple background",
     "default_styles": [
-        "Fooocus Pony"
+        
     ],
     "default_aspect_ratio": "896*1152",
-	"default_clip_skip": 2,
-	"default_output_format": "jpeg",
+    "default_clip_skip": 2,
+    "default_output_format": "jpeg",
     "default_overwrite_step": 18,
-	"default_advanced_checkbox": true,
-	"default_image_number": 4,
-	"default_max_image_number": 100,
+    "default_image_prompt_checkbox": true,
+    "default_enhance_checkbox": true,
+    "default_advanced_checkbox": true,
+    "default_developer_debug_mode_checkbox": true,
+    "default_image_prompt_advanced_checkbox": true,
+    "default_image_number": 4,
+    "default_max_image_number": 100,
     "default_inpaint_engine_version": "None",
-	"default_save_metadata_to_images": true,
-	"default_metadata_scheme": "a1111",
+    "default_save_only_final_enhanced_image": true,
+    "default_save_metadata_to_images": true,
+    "default_metadata_scheme": "a1111",
     "checkpoint_downloads": {
         
     },
