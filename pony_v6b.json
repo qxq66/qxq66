@@ -36,7 +36,7 @@
     "default_scheduler": "karras",
     "default_performance": "Speed",
     "default_prompt": "score_9, score_8_up, score_7_up, score_6_up, KatjaFlnt99, (curly blonde hair:1.1), lingerie, looking at viewer, front view, bedroom, bed, brown eyes",
-    "default_prompt_negative": "(head out of frame:1.2), freckles, bad quality, bad face, deformed face, low quality, text, censored, deformed, blurry, simple background",
+    "default_prompt_negative": "(head out of frame:1.1), bad quality, bad face, deformed face, low quality, text, blurry, simple background",
     "default_styles": [
         
     ],
