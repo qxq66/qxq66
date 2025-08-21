@@ -554,7 +554,7 @@ with gr.Blocks(elem_id="app", theme=theme, css=css) as demo:
             train_script = gr.Textbox(label="Train script", max_lines=100, interactive=True)
             train_config = gr.Textbox(label="Train config", max_lines=100, interactive=True)
     with gr.Row():
-        terminal = LogsView(label="Train log", elem_id="terminal")
+        terminal = gr.Textbox(label="Train log", elem_id="terminal")
     with gr.Row():
         gallery = gr.Gallery(get_samples, label="Samples", every=10, columns=6)
 
