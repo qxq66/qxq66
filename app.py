@@ -1,4 +1,5 @@
 import os
+from pyngrok import ngrok
 os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
 import sys
 import subprocess
@@ -15,7 +16,6 @@ import json
 import yaml
 from slugify import slugify
 from transformers import AutoProcessor, AutoModelForCausalLM
-from gradio_logsview import LogsView, LogsViewRunner
 from huggingface_hub import hf_hub_download
 
 MAX_IMAGES = 150
@@ -638,33 +638,21 @@ with gr.Blocks(elem_id="app", theme=theme, css=css) as demo:
     do_captioning.click(fn=run_captioning, inputs=[images, concept_sentence] + caption_list, outputs=caption_list)
     demo.load(fn=loaded, js=js)
 
-
-
 if __name__ == "__main__":
-    import os
-    from pyngrok import ngrok
-
-    # Ngrok-Token aus Kaggle Secret / ENV
-    token = os.getenv("NGROK_AUTH_TOKEN")
+    import os, time
+    token = os.getenv("NGROK_AUTH_TOKEN") or os.getenv("NGROK_TOKEN")
     if token:
         ngrok.set_auth_token(token)
-    else:
-        print("⚠️ Kein NGROK_AUTH_TOKEN gefunden – bitte in Kaggle Secrets setzen oder per os.environ setzen!")
-
     public_url = ngrok.connect(7860)
     print("🌍 NGROK URL:", public_url)
 
-    cwd = os.path.dirname(os.path.abspath(__file__))
     demo.launch(
         server_name="0.0.0.0",
         server_port=7860,
         share=False,
-        allowed_paths=[cwd],
         show_error=True,
         inbrowser=False,
         prevent_thread_lock=True
     )
-
-    import time
     while True:
         time.sleep(1)
