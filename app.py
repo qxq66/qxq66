@@ -639,6 +639,7 @@ with gr.Blocks(elem_id="app", theme=theme, css=css) as demo:
     demo.load(fn=loaded, js=js)
 
 
+
 if __name__ == "__main__":
     import os
     from pyngrok import ngrok
@@ -657,7 +658,7 @@ if __name__ == "__main__":
     demo.launch(
         server_name="0.0.0.0",
         server_port=7860,
-        share=True,
+        share=False,
         allowed_paths=[cwd],
         show_error=True,
         inbrowser=False,
