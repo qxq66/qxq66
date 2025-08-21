@@ -1,5 +1,4 @@
 import os
-from pyngrok import ngrok
 os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
 import sys
 import subprocess
@@ -16,9 +15,27 @@ import json
 import yaml
 from slugify import slugify
 from transformers import AutoProcessor, AutoModelForCausalLM
+# removed gradio_logsview import
 from huggingface_hub import hf_hub_download
 
 MAX_IMAGES = 150
+
+class SimpleRunner:
+    def run_command(self, commands, cwd=None):
+        import subprocess, sys
+        for cmd in commands:
+            try:
+                p = subprocess.Popen(cmd, shell=True, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)
+                for line in p.stdout:
+                    yield line.rstrip()
+                p.wait()
+                yield f"[exit {p.returncode}]"
+            except Exception as e:
+                yield f"[runner error] {e}"
+
+    def log(self, msg):
+        yield str(msg)
+
 
 def load_captioning(uploaded_files, concept_sentence):
     uploaded_images = [file for file in uploaded_files if not file.endswith('.txt')]
@@ -338,7 +355,7 @@ def start_training(
     # Use Popen to run the command and capture output in real-time
     env = os.environ.copy()
     env['PYTHONIOENCODING'] = 'utf-8'
-    runner = LogsViewRunner()
+    runner = SimpleRunner()
     cwd = os.path.dirname(os.path.abspath(__file__))
     gr.Info(f"Started training")
     yield from runner.run_command([command], cwd=cwd)
@@ -554,7 +571,7 @@ with gr.Blocks(elem_id="app", theme=theme, css=css) as demo:
             train_script = gr.Textbox(label="Train script", max_lines=100, interactive=True)
             train_config = gr.Textbox(label="Train config", max_lines=100, interactive=True)
     with gr.Row():
-        terminal = gr.Textbox(label="Train log", elem_id="terminal")
+        terminal = gr.Textbox(label="Train log", elem_id="terminal", lines=20)
     with gr.Row():
         gallery = gr.Gallery(get_samples, label="Samples", every=10, columns=6)
 
@@ -588,8 +605,7 @@ with gr.Blocks(elem_id="app", theme=theme, css=css) as demo:
         inputs=[images, concept_sentence],
         outputs=output_components
     )
-
-    images.value = None
+# images.delete handler removed for Gradio 4.x compatibility
 
     images.clear(
         hide_captioning,
@@ -615,7 +631,7 @@ with gr.Blocks(elem_id="app", theme=theme, css=css) as demo:
         inputs=[max_train_epochs, num_repeats, images],
         outputs=[total_steps]
     )
-    images.value = None
+# images.delete handler removed for Gradio 4.x compatibility
     images.clear(
         fn=update_total_steps,
         inputs=[max_train_epochs, num_repeats, images],
@@ -638,21 +654,18 @@ with gr.Blocks(elem_id="app", theme=theme, css=css) as demo:
     do_captioning.click(fn=run_captioning, inputs=[images, concept_sentence] + caption_list, outputs=caption_list)
     demo.load(fn=loaded, js=js)
 
+
 if __name__ == "__main__":
-    import os, time
-    token = os.getenv("NGROK_AUTH_TOKEN") or os.getenv("NGROK_TOKEN")
+    from pyngrok import ngrok
+    token = os.getenv("NGROK_AUTH_TOKEN")
     if token:
         ngrok.set_auth_token(token)
+    else:
+        print("⚠️ Kein NGROK_AUTH_TOKEN gesetzt – bitte in Kaggle Secrets oder /kaggle/working/.ngrok_token hinterlegen.")
     public_url = ngrok.connect(7860)
     print("🌍 NGROK URL:", public_url)
-
-    demo.launch(
-        server_name="0.0.0.0",
-        server_port=7860,
-        share=False,
-        show_error=True,
-        inbrowser=False,
-        prevent_thread_lock=True
-    )
+    cwd = os.path.dirname(os.path.abspath(__file__))
+    demo.launch(server_name="0.0.0.0", server_port=7860, share=False, show_error=True, allowed_paths=[cwd], prevent_thread_lock=True)
+    import time
     while True:
         time.sleep(1)
