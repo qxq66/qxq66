@@ -589,11 +589,7 @@ with gr.Blocks(elem_id="app", theme=theme, css=css) as demo:
         outputs=output_components
     )
 
-    images.delete(
-        load_captioning,
-        inputs=[images, concept_sentence],
-        outputs=output_components
-    )
+    images.value = None
 
     images.clear(
         hide_captioning,
@@ -619,11 +615,7 @@ with gr.Blocks(elem_id="app", theme=theme, css=css) as demo:
         inputs=[max_train_epochs, num_repeats, images],
         outputs=[total_steps]
     )
-    images.delete(
-        fn=update_total_steps,
-        inputs=[max_train_epochs, num_repeats, images],
-        outputs=[total_steps]
-    )
+    images.value = None
     images.clear(
         fn=update_total_steps,
         inputs=[max_train_epochs, num_repeats, images],
