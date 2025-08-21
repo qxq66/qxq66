@@ -646,16 +646,17 @@ with gr.Blocks(elem_id="app", theme=theme, css=css) as demo:
     do_captioning.click(fn=run_captioning, inputs=[images, concept_sentence] + caption_list, outputs=caption_list)
     demo.load(fn=loaded, js=js)
 
+
 if __name__ == "__main__":
     import os
     from pyngrok import ngrok
 
-    # Ngrok-Token aus Kaggle Secret / ENV (Add-ons → Secrets → NGROK_AUTH_TOKEN)
+    # Ngrok-Token aus Kaggle Secret / ENV
     token = os.getenv("NGROK_AUTH_TOKEN")
     if token:
         ngrok.set_auth_token(token)
     else:
-        print("⚠️ Kein NGROK_AUTH_TOKEN gefunden – bitte als Kaggle Secret setzen oder per os.environ setzen!")
+        print("⚠️ Kein NGROK_AUTH_TOKEN gefunden – bitte in Kaggle Secrets setzen oder per os.environ setzen!")
 
     public_url = ngrok.connect(7860)
     print("🌍 NGROK URL:", public_url)
@@ -664,7 +665,7 @@ if __name__ == "__main__":
     demo.launch(
         server_name="0.0.0.0",
         server_port=7860,
-        share=True,              # Kaggle verlangt share=True
+        share=True,
         allowed_paths=[cwd],
         show_error=True,
         inbrowser=False,
