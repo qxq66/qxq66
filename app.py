@@ -667,4 +667,4 @@ if __name__ == "__main__":
     print("🌍 NGROK URL:", ngrok.connect(port).public_url)
 
     cwd = os.path.dirname(os.path.abspath(__file__))
-    demo.queue().launch(server_name="0.0.0.0", server_port=7860, share=True, show_error=True, prevent_thread_lock=True)
+    demo.queue().launch(server_name="0.0.0.0", server_port=7860, share=False, show_error=True, prevent_thread_lock=True)
