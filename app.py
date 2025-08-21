@@ -455,7 +455,7 @@ function() {
 }
 """
 
-with gr.Blocks(elem_id="app", theme=theme, css=css, fill_width=True) as demo:
+with gr.Blocks(elem_id="app", theme=theme, css=css) as demo:
     output_components = []
     with gr.Row():
         gr.HTML("""<nav>
@@ -647,5 +647,30 @@ with gr.Blocks(elem_id="app", theme=theme, css=css, fill_width=True) as demo:
     demo.load(fn=loaded, js=js)
 
 if __name__ == "__main__":
+    import os
+    from pyngrok import ngrok
+
+    # Ngrok-Token aus Kaggle Secret / ENV (Add-ons → Secrets → NGROK_AUTH_TOKEN)
+    token = os.getenv("NGROK_AUTH_TOKEN")
+    if token:
+        ngrok.set_auth_token(token)
+    else:
+        print("⚠️ Kein NGROK_AUTH_TOKEN gefunden – bitte als Kaggle Secret setzen oder per os.environ setzen!")
+
+    public_url = ngrok.connect(7860)
+    print("🌍 NGROK URL:", public_url)
+
     cwd = os.path.dirname(os.path.abspath(__file__))
-    demo.launch(show_error=True, allowed_paths=[cwd], share=True)
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=7860,
+        share=True,              # Kaggle verlangt share=True
+        allowed_paths=[cwd],
+        show_error=True,
+        inbrowser=False,
+        prevent_thread_lock=True
+    )
+
+    import time
+    while True:
+        time.sleep(1)
