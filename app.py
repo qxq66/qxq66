@@ -7,21 +7,6 @@ import subprocess
 sys.path.insert(0, os.getcwd())
 
 import gradio as gr
-
-from packaging import version as _v
-import gradio_client.utils as _gcu
-if hasattr(_gcu, "_json_schema_to_python_type"):
-    _orig__json_to_py = _gcu._json_schema_to_python_type
-    def _safe__json_to_py(schema, defs):
-        try:
-            if isinstance(schema, bool): return "Any"
-            if isinstance(schema, dict) and isinstance(schema.get("additionalProperties"), bool):
-                return "Dict[str, Any]"
-            return _orig__json_to_py(schema, defs)
-        except TypeError:
-            return "Any"
-    _gcu._json_schema_to_python_type = _safe__json_to_py
-
 from PIL import Image
 import torch
 import uuid
@@ -470,7 +455,7 @@ function() {
 }
 """
 
-with gr.Blocks(elem_id="app", theme=theme, css=css, ) as demo:
+with gr.Blocks(elem_id="app", theme=theme, css=css, fill_width=True) as demo:
     output_components = []
     with gr.Row():
         gr.HTML("""<nav>
@@ -569,7 +554,7 @@ with gr.Blocks(elem_id="app", theme=theme, css=css, ) as demo:
             train_script = gr.Textbox(label="Train script", max_lines=100, interactive=True)
             train_config = gr.Textbox(label="Train config", max_lines=100, interactive=True)
     with gr.Row():
-        terminal = gr.Textbox(label="Train log", elem_id="terminal")
+        terminal = LogsView(label="Train log", elem_id="terminal")
     with gr.Row():
         gallery = gr.Gallery(get_samples, label="Samples", every=10, columns=6)
 
@@ -604,7 +589,7 @@ with gr.Blocks(elem_id="app", theme=theme, css=css, ) as demo:
         outputs=output_components
     )
 
-    images.clear(
+    images.delete(
         load_captioning,
         inputs=[images, concept_sentence],
         outputs=output_components
@@ -634,7 +619,7 @@ with gr.Blocks(elem_id="app", theme=theme, css=css, ) as demo:
         inputs=[max_train_epochs, num_repeats, images],
         outputs=[total_steps]
     )
-    images.clear(
+    images.delete(
         fn=update_total_steps,
         inputs=[max_train_epochs, num_repeats, images],
         outputs=[total_steps]
@@ -662,9 +647,5 @@ with gr.Blocks(elem_id="app", theme=theme, css=css, ) as demo:
     demo.load(fn=loaded, js=js)
 
 if __name__ == "__main__":
-    from pyngrok import ngrok
-    port=7860
-    print("🌍 NGROK URL:", ngrok.connect(port).public_url)
-
     cwd = os.path.dirname(os.path.abspath(__file__))
-    demo.queue().launch(server_name="0.0.0.0", server_port=7860, share=False, show_error=True, prevent_thread_lock=True)
+    demo.launch(show_error=True, allowed_paths=[cwd], share=True)
