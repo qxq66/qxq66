@@ -1,0 +1,5 @@
+matplotlib
+ultralytics
+numpy
+opencv-python-headless
+dill
