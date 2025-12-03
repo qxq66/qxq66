@@ -1,125 +1,22 @@
 {
   "id": "e41d75c3-2f02-47e9-be7f-5b5902dc988d",
   "revision": 0,
-  "last_node_id": 6,
+  "last_node_id": 12,
   "last_link_id": 2,
   "nodes": [
-    {
-      "id": 3,
-      "type": "HF Downloader",
-      "pos": [
-        -2362.3339688227716,
-        346.05767680064173
-      ],
-      "size": [
-        287.04354311379666,
-        154
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "USO Flux",
-      "properties": {
-        "Node name for S&R": "HF Downloader",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.5.2"
-        }
-      },
-      "widgets_values": [
-        "Comfy-Org/USO_1.0_Repackaged",
-        "split_files/loras/uso-flux1-dit-lora-v1.safetensors",
-        "loras",
-        false,
-        ""
-      ]
-    },
-    {
-      "id": 1,
-      "type": "HF Downloader",
-      "pos": [
-        -2361.6527877848393,
-        161.53235600198136
-      ],
-      "size": [
-        285.90730690621035,
-        154
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "USO Flux",
-      "properties": {
-        "Node name for S&R": "HF Downloader",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.5.2"
-        }
-      },
-      "widgets_values": [
-        "Comfy-Org/USO_1.0_Repackaged",
-        "split_files/model_patches/uso-flux1-projector-v1.safetensors",
-        "model_patches",
-        true,
-        ""
-      ]
-    },
-    {
-      "id": 6,
-      "type": "Fast Groups Muter (rgthree)",
-      "pos": [
-        -2061.1002779006258,
-        118.48125451962179
-      ],
-      "size": [
-        242.5812958146613,
-        66.81741724551867
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": null
-        }
-      ],
-      "properties": {
-        "matchColors": "",
-        "matchTitle": "",
-        "showNav": true,
-        "showAllGraphs": true,
-        "sort": "position",
-        "customSortAlphabet": "",
-        "toggleRestriction": "default",
-        "ue_properties": {
-          "widget_ue_connectable": {},
-          "input_ue_unconnectable": {},
-          "version": "7.5.2"
-        }
-      }
-    },
     {
       "id": 5,
       "type": "Auto Model Downloader",
       "pos": [
-        -1550.0145034888021,
-        743.4111686921678
+        -1505.7012913929304,
+        764.9996566363103
       ],
       "size": [
         249.2095703125,
         98
       ],
       "flags": {},
-      "order": 3,
+      "order": 0,
       "mode": 4,
       "inputs": [],
       "outputs": [
@@ -155,15 +52,15 @@
       "id": 2,
       "type": "CivitAI Downloader",
       "pos": [
-        -1803.1746587784985,
-        740.0024600694088
+        -1758.8614466826268,
+        761.5909480135513
       ],
       "size": [
         245.00280343309794,
         106
       ],
       "flags": {},
-      "order": 4,
+      "order": 1,
       "mode": 4,
       "inputs": [],
       "outputs": [],
@@ -180,18 +77,351 @@
         "98ebfe8b5c68a087a673a39e0eb491d5",
         "loras"
       ]
+    },
+    {
+      "id": 3,
+      "type": "HF Downloader",
+      "pos": [
+        -2313.4758118965538,
+        217.66298534337295
+      ],
+      "size": [
+        210,
+        154
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [],
+      "title": "USO Flux",
+      "properties": {
+        "Node name for S&R": "HF Downloader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "Comfy-Org/USO_1.0_Repackaged",
+        "split_files/loras/uso-flux1-dit-lora-v1.safetensors",
+        "loras",
+        true,
+        ""
+      ]
+    },
+    {
+      "id": 1,
+      "type": "HF Downloader",
+      "pos": [
+        -2312.794630858622,
+        34.273900752299156
+      ],
+      "size": [
+        210,
+        154
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [],
+      "title": "USO Flux",
+      "properties": {
+        "Node name for S&R": "HF Downloader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "Comfy-Org/USO_1.0_Repackaged",
+        "split_files/model_patches/uso-flux1-projector-v1.safetensors",
+        "model_patches",
+        true,
+        ""
+      ]
+    },
+    {
+      "id": 8,
+      "type": "HF Downloader",
+      "pos": [
+        -2322.7918274255276,
+        695.7923028689902
+      ],
+      "size": [
+        210,
+        154
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [],
+      "title": "Flux Krea",
+      "properties": {
+        "Node name for S&R": "HF Downloader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "QuantStack/FLUX.1-Krea-dev-GGUF",
+        "flux1-krea-dev-Q4_K_M.gguf",
+        "unet",
+        true,
+        ""
+      ]
+    },
+    {
+      "id": 7,
+      "type": "HF Downloader",
+      "pos": [
+        -2095.999641077897,
+        512.4032182779179
+      ],
+      "size": [
+        210,
+        154
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [],
+      "title": "Flux Inpaint",
+      "properties": {
+        "Node name for S&R": "HF Downloader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "YarvixPA/FLUX.1-Fill-dev-GGUF",
+        "flux1-fill-dev-Q4_K_S.gguf",
+        "unet",
+        true,
+        ""
+      ]
+    },
+    {
+      "id": 9,
+      "type": "HF Downloader",
+      "pos": [
+        -2317.110646387593,
+        456.04646306825
+      ],
+      "size": [
+        210,
+        154
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [],
+      "title": "Flux Kontext",
+      "properties": {
+        "Node name for S&R": "HF Downloader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "QuantStack/FLUX.1-Kontext-dev-GGUF",
+        "flux1-kontext-dev-Q4_K_M.gguf",
+        "unet",
+        true,
+        ""
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Fast Groups Muter (rgthree)",
+      "pos": [
+        -2099.732308958569,
+        225.28745803274813
+      ],
+      "size": [
+        231.21893373879686,
+        202
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "matchColors": "",
+        "matchTitle": "",
+        "showNav": true,
+        "showAllGraphs": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "type": "HF Downloader",
+      "pos": [
+        -2093.9532945310007,
+        37.23035763850464
+      ],
+      "size": [
+        210,
+        154
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Flux 1 Dev",
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        },
+        "Node name for S&R": "HF Downloader"
+      },
+      "widgets_values": [
+        "city96/FLUX.1-dev-gguf",
+        "flux1-dev-Q4_K_S.gguf",
+        "unet",
+        true,
+        ""
+      ]
+    },
+    {
+      "id": 10,
+      "type": "HF Downloader",
+      "pos": [
+        -1869.4335805985356,
+        37.911538676436976
+      ],
+      "size": [
+        210,
+        154
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 2,
+      "inputs": [],
+      "outputs": [],
+      "title": "Fluxmania",
+      "properties": {
+        "Node name for S&R": "HF Downloader",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "belisarius/FLUX.1-dev-Fluxmania-Legacy-gguf",
+        "fluxmania_legacy-Q4_K_M.gguf",
+        "unet",
+        true,
+        ""
+      ]
     }
   ],
   "links": [],
   "groups": [
     {
       "id": 1,
-      "title": "USO FLUX",
+      "title": "Flux Uso",
       "bounding": [
-        -2372.3339688227716,
-        87.93235600198109,
-        307.04354311379666,
-        422.1253207986598
+        -2320.067103273794,
+        -40.462335455287516,
+        216.1446465068807,
+        417.5803759683139
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "Flux Inpaint",
+      "bounding": [
+        -2099.182223832378,
+        433.1220372399855,
+        218.41711892205376,
+        235.32752758482707
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "Flux Krea",
+      "bounding": [
+        -2323.7019377648357,
+        621.0560666614037,
+        217.28088271446723,
+        231.9188189620678
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "Flux Kontext",
+      "bounding": [
+        -2321.429465349661,
+        375.6290458227315,
+        216.3651655089625,
+        242.14494483034582
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "Fluxmania",
+      "bounding": [
+        -1876.024871975777,
+        -37.96093373873596,
+        226.59129137724062,
+        230.7825827544813
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "Flux 1 Dev",
+      "bounding": [
+        -2095.9996410778945,
+        -38.64211477666811,
+        212.95645688620334,
+        228.51011033930845
       ],
       "color": "#3f789e",
       "font_size": 24,
@@ -206,8 +436,8 @@
     "ds": {
       "scale": 0.8800986919121017,
       "offset": [
-        2779.2015610952576,
-        56.49912144869107
+        2672.3953575821292,
+        168.98650599974943
       ]
     },
     "frontendVersion": "1.33.10"
