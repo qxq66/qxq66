@@ -1,3 +1,17 @@
-custom_drive_paths:
-    base_path: /content/drive/MyDrive/2Loras
-    loras: .
+comfyui:
+    base_path: /content/ComfyUI/
+    is_default: true
+    
+    llm: |
+        /content/ComfyUI/models/llm/
+        /content/ComfyUI/models/clip/
+    llms: |
+        /content/ComfyUI/models/llms/
+        /content/ComfyUI/models/clip/
+    llm_gguf: |
+        /content/ComfyUI/models/llm_gguf/
+        /content/ComfyUI/models/clip/
+        
+    loras: |
+        /content/ComfyUI/models/loras/
+        /content/drive/MyDrive/2Loras/
